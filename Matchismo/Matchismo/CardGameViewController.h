@@ -10,6 +10,7 @@
 #import "PlayingCardDeck.h"
 
 @interface CardGameViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *display;
 
 
 
