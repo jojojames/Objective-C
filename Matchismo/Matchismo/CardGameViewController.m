@@ -7,13 +7,26 @@
 //
 
 #import "CardGameViewController.h"
+#import "PlayingCardDeck.h"
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipLabel;
 @property (nonatomic) int flipCount;
+//
+@property (nonatomic) PlayingCardDeck *Deck;
+//
 @end
 
 @implementation CardGameViewController
+
+@synthesize Deck = _Deck;
+
+- (PlayingCardDeck *)Deck {
+    if(!_Deck) {
+        _Deck = [[PlayingCardDeck alloc] init];
+    }
+    return _Deck;
+}
 
 - (void)setFlipCount:(int)flipCount {
     _flipCount = flipCount;
