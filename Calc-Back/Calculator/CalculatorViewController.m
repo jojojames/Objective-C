@@ -18,18 +18,18 @@
 @implementation CalculatorViewController
 
 @synthesize display = _display;
-@synthesize inputs = _inputs;
 @synthesize userIsInTheMiddleOfEnteringANumber;
 @synthesize userPressedDecimalKey;
 @synthesize brain = _brain;
 
+// Getter for brain
 - (CalculatorBrain *)brain {
     if(!_brain)
         _brain = [[CalculatorBrain alloc] init];
     return _brain;
 }
 
-/* Numbers buttons that also takes care of the decimal. */
+// 0,1,2,...,7,8,9
 - (IBAction)digitPressed:(UIButton *)sender {
     if([sender.currentTitle isEqualToString:@"."] && self.userPressedDecimalKey == YES)
         return;
@@ -43,13 +43,9 @@
         self.display.text = digit;
         self.userIsInTheMiddleOfEnteringANumber = YES;
     }
-    
-    // Write to the inputs label.
-    self.inputs.text = [self.inputs.text stringByAppendingString:digit];
 }
 
-/* When an operation is pressed, it sends what operation specified to the brain,
- the brain returns a result based on the string. It also updates the display and inputs labels. */
+// *,/,+,-
 - (IBAction)operationPressed:(UIButton *)sender {
     if (self.userIsInTheMiddleOfEnteringANumber)
        [self enterPressed];
@@ -59,28 +55,21 @@
     double result = [self.brain performOperation:sender.currentTitle];
     
     NSString * resultString = [NSString stringWithFormat:@"%g", result];
-    // Update inputs and display label.
-    self.inputs.text = [self.inputs.text stringByAppendingString:sender.currentTitle];
-    self.inputs.text = [self.inputs.text stringByAppendingString:@" "];
     self.display.text = resultString;
 }
 
-/* When Enter is pressed, it pushes an operand onto a stack from the brain and
- updates the labels on the screen. */
+// Enter Key
 - (IBAction)enterPressed {
     [self.brain pushOperand:[self.display.text doubleValue]];
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.userPressedDecimalKey = NO;
-    self.inputs.text = [self.inputs.text stringByAppendingString:@" "];
 }
 
 
 - (IBAction)clearAll:(UIButton *)sender {
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.userPressedDecimalKey = NO;
-    // Clear both labels and clear the stack in the brain.
     self.display.text = @"0";
-    self.inputs.text = @"";
     [self.brain removeAll];
 }
 

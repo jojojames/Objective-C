@@ -15,6 +15,5 @@
 - (double)peekOperand;
 - (double)performOperation:(NSString *)operation;
 - (void)removeAll;
-- (BOOL)isEmpty;
 
 @end

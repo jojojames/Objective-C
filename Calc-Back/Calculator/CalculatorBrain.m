@@ -29,7 +29,6 @@
     _operandStack = operandStack;
 }
 
-// Adds a number into the stack for evaluation later.
 - (void)pushOperand:(double)operand {
     [self.operandStack addObject:[NSNumber numberWithDouble:operand]];
 }
@@ -42,7 +41,6 @@
     return [operandObject doubleValue];
 }
 
-// Take a look at the top of the stack but don't remove it.
 - (double)peekOperand {
     NSNumber *operandObject = [self.operandStack lastObject];
     return [operandObject doubleValue];
@@ -63,28 +61,14 @@
         // First push 3.14 into the stack then return it.
         [self pushOperand:3.14];
         result = [Calculations Pi:[self peekOperand]];
-    } else if ([operation isEqualToString:@"Sin"]) {
-        result = [Calculations Sin_:[self popOperand]];
-    } else if ([operation isEqualToString:@"Cos"]) {
-        result = [Calculations Cos_:[self popOperand]];
-    } else if ([operation isEqualToString:@"Sqrt"]) {
-        result = [Calculations Sqrt_:[self popOperand]];
     }
     return result;
 }
 
 - (void)removeAll {
-    while(self.operandStack.count) {
-        [self.operandStack removeLastObject];
-    }
-}
-
-- (BOOL)isEmpty {
     NSNumber *operandObject = [self.operandStack lastObject];
-    if(operandObject == nil) {
-        return TRUE;
-    } else {
-        return FALSE;
+    while(operandObject != nil) {
+        [self.operandStack removeLastObject];
     }
 }
 
