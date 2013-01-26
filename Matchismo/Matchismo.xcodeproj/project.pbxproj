@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A81EF6016B3A4310068E5ED /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A81EF5F16B3A4310068E5ED /* CardMatchingGame.m */; };
 		1AF00E7B16A4D617002E6D33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7A16A4D617002E6D33 /* UIKit.framework */; };
 		1AF00E7D16A4D617002E6D33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7C16A4D617002E6D33 /* Foundation.framework */; };
 		1AF00E7F16A4D617002E6D33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7E16A4D617002E6D33 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A81EF5E16B3A4300068E5ED /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		1A81EF5F16B3A4310068E5ED /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 		1AF00E7616A4D617002E6D33 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF00E7A16A4D617002E6D33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AF00E7C16A4D617002E6D33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +126,8 @@
 		1AF00EA016A4EB3C002E6D33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1A81EF5E16B3A4300068E5ED /* CardMatchingGame.h */,
+				1A81EF5F16B3A4310068E5ED /* CardMatchingGame.m */,
 				1AF00E9D16A4EB14002E6D33 /* Card.h */,
 				1AF00E9E16A4EB14002E6D33 /* Card.m */,
 				1AF00EA116A4EB78002E6D33 /* Deck.h */,
@@ -209,6 +214,7 @@
 				1AF00EA316A4EB78002E6D33 /* Deck.m in Sources */,
 				1AF00EA616A4ECCE002E6D33 /* PlayingCard.m in Sources */,
 				1AF00EA916A51EB6002E6D33 /* PlayingCardDeck.m in Sources */,
+				1A81EF6016B3A4310068E5ED /* CardMatchingGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +331,7 @@
 				1AF00E9C16A4D617002E6D33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

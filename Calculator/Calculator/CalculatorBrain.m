@@ -10,77 +10,112 @@
 #import "Calculations.h"
 
 @interface CalculatorBrain()
-@property (nonatomic, strong) NSMutableArray *operandStack;
+@property (nonatomic, strong) NSMutableArray *programStack;
 @end
 
 @implementation CalculatorBrain
 
-@synthesize operandStack = _operandStack; // makes the instance variables for the pointer, never allocates anything
+@synthesize programStack = _programStack; // makes the instance variables for the pointer, never allocates anything
 
-// Getter for operandStack
-- (NSMutableArray *)operandStack {
-    if(_operandStack == nil)
-        _operandStack = [[NSMutableArray alloc] init]; // Lazy instantiation
-    return _operandStack;
+// Getter for programStack
+- (NSMutableArray *)programStack {
+    if(_programStack == nil)
+        _programStack = [[NSMutableArray alloc] init]; // Lazy instantiation
+    return _programStack;
 }
 
-// Setter for operandStack 
-- (void)setOperandStack:(NSMutableArray *)operandStack {
-    _operandStack = operandStack;
+// Setter for programStack 
+- (void)setOperandStack:(NSMutableArray *)programStack {
+    _programStack = programStack;
 }
 
 // Adds a number into the stack for evaluation later.
 - (void)pushOperand:(double)operand {
-    [self.operandStack addObject:[NSNumber numberWithDouble:operand]];
+    [self.programStack addObject:[NSNumber numberWithDouble:operand]];
 }
 
 - (double)popOperand {
-    NSNumber *operandObject = [self.operandStack lastObject];
+    NSNumber *operandObject = [self.programStack lastObject];
     if(operandObject != nil) {
-        [self.operandStack removeLastObject];
+        [self.programStack removeLastObject];
     }
     return [operandObject doubleValue];
 }
 
 // Take a look at the top of the stack but don't remove it.
 - (double)peekOperand {
-    NSNumber *operandObject = [self.operandStack lastObject];
+    NSNumber *operandObject = [self.programStack lastObject];
     return [operandObject doubleValue];
 }
 
 - (double)performOperation:(NSString *)operation {
+    [self.programStack addObject:operation];
+    return [CalculatorBrain runProgram:self.program];
+}
+    
+    
+- (id)program {
+    return [self.programStack copy];
+}
+
++ (NSString *)descriptionOfProgram:(id)program {
+    return @"Implement this in assignment 2";
+}
+
++ (double)popOperandOffStack:(NSMutableArray *)stack {
     double result = 0;
-    // calculate result
-    if ([operation isEqualToString:@"+"]) {
-        result = [Calculations Add:[self popOperand] And:[self popOperand]];
-    } else if ([@"*" isEqualToString:operation]) {
-        result = [Calculations Multiply:[self popOperand] And:[self popOperand]];
-    } else if ([operation isEqualToString:@"/"]) {
-        result = [Calculations Divide:[self popOperand] And:[self popOperand]];
-    } else if ([operation isEqualToString:@"-"]) {
-        result = [Calculations Subtract:[self popOperand] And:[self popOperand]];
-    } else if ([operation isEqualToString:@"Pi"]) {
-        // First push 3.14 into the stack then return it.
-        [self pushOperand:3.14];
-        result = [Calculations Pi:[self peekOperand]];
-    } else if ([operation isEqualToString:@"Sin"]) {
-        result = [Calculations Sin_:[self popOperand]];
-    } else if ([operation isEqualToString:@"Cos"]) {
-        result = [Calculations Cos_:[self popOperand]];
-    } else if ([operation isEqualToString:@"Sqrt"]) {
-        result = [Calculations Sqrt_:[self popOperand]];
+    
+    id topOfStack = [stack lastObject];
+    // if not nill, remove the object
+    if(topOfStack) [stack removeLastObject];
+    
+    
+    if([topOfStack isKindOfClass:[NSNumber class]]) {
+        result = [topOfStack doubleValue];
+    } else if ([topOfStack isKindOfClass:[NSString class]]) {
+        NSString *operation = topOfStack;
+        if ([operation isEqualToString:@"+"]) {
+            result = [Calculations add:[self popOperandOffStack:stack] _and:[self popOperandOffStack:stack]];
+        } else if ([@"*" isEqualToString:operation]) {
+            result = [Calculations multiply:[self popOperandOffStack:stack] _and:[self popOperandOffStack:stack]];
+        } else if ([operation isEqualToString:@"/"]) {
+            result = [Calculations divide:[self popOperandOffStack:stack] _and:[self popOperandOffStack:stack]];
+        } else if ([operation isEqualToString:@"-"]) {
+            result = [Calculations subtract:[self popOperandOffStack:stack] _and:[self popOperandOffStack:stack]];
+        } else if ([operation isEqualToString:@"Pi"]) {
+            // First push 3.14 into the stack then return it.
+            [stack addObject:[NSNumber numberWithDouble:3.14]];
+            result = [Calculations pi:3.14];
+        } else if ([operation isEqualToString:@"Sin"]) {
+            result = [Calculations sin_:[self popOperandOffStack:stack]];
+        } else if ([operation isEqualToString:@"Cos"]) {
+            result = [Calculations cos_:[self popOperandOffStack:stack]];
+        } else if ([operation isEqualToString:@"Sqrt"]) {
+            result = [Calculations sqrt_:[self popOperandOffStack:stack]];
+        }
     }
+    
     return result;
+    
+}
+
++ (double)runProgram:(id)program {
+    NSMutableArray *stack;
+    if([program isKindOfClass:[NSArray class]]) {
+        // passing an (id) into NSMutableArray
+        stack = [program mutableCopy];
+    }
+    return [self popOperandOffStack:stack];
 }
 
 - (void)removeAll {
-    while(self.operandStack.count) {
-        [self.operandStack removeLastObject];
+    while(self.programStack.count) {
+        [self.programStack removeLastObject];
     }
 }
 
 - (BOOL)isEmpty {
-    NSNumber *operandObject = [self.operandStack lastObject];
+    NSNumber *operandObject = [self.programStack lastObject];
     if(operandObject == nil) {
         return TRUE;
     } else {

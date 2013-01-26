@@ -10,22 +10,22 @@
 
 @interface Calculations : NSObject
 
-+ (double)Add:(double)A And:(double)B;
++ (double)add:(double)A _and:(double)B;
 
-+ (double)Subtract:(double)A And:(double)B;
++ (double)subtract:(double)A _and:(double)B;
 
-+ (double)Multiply:(double)A And:(double)B;
++ (double)multiply:(double)A _and:(double)B;
 
-+ (double)Divide:(double)A And:(double)B;
++ (double)divide:(double)A _and:(double)B;
 
-+ (double)Raise:(double)A Power:(double)B;
++ (double)raise:(double)A _power:(double)B;
 
-+ (double)Pi:(double)A;
++ (double)pi:(double)x;
 
-+ (double)Sin_:(double)A;
++ (double)sin_:(double)x;
 
-+ (double)Cos_:(double)A;
++ (double)cos_:(double)x;
 
-+ (double)Sqrt_:(double)A;
++ (double)sqrt_:(double)x;
 
 @end

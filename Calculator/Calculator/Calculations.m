@@ -10,48 +10,64 @@
 
 @implementation Calculations
 
-+ (double)Add:(double)A And:(double)B {
++ (double)add:(double)A _and:(double)B {
     return A + B;
 }
 
-+ (double)Subtract:(double)A And:(double)B {
++ (double)subtract:(double)A _and:(double)B {
     return A - B;
 }
 
-+ (double)Multiply:(double)A And:(double)B {
++ (double)multiply:(double)A _and:(double)B {
     return A * B;
 }
 
-+ (double)Divide:(double)A And:(double)B {
++ (double)divide:(double)A _and:(double)B {
     return A / B;
 }
 
-+ (double)Raise:(double)A Power:(double)B {
++ (double)raise:(double)A _power:(double)B {
     if(B == 0) {
         return 1;
     } else {
-        return (A * [self Raise:A Power:B-1]);
+        return (A * [self raise:A _power:B-1]);
     }
 }
 
-+ (double) Pi:(double)A {
-    return A;
++ (double) pi:(double)X {
+    return X;
 }
 
 // Convert degree to radian first because the sin function uses radians to measure.
-+ (double)Sin_:(double)A {
-    double radian_number = A * (3.14/180);
++ (double)sin_:(double)X {
+    double radian_number = X * (3.14/180);
     return sin(radian_number);
 }
 
 // Convert degree to radian first because the cos function uses radians to measure.
-+ (double)Cos_:(double)A {
-    double radian_number = A * (3.14/180);
++ (double)cos_:(double)X {
+    double radian_number = X * (3.14/180);
     return cos(radian_number);
 }
 
-+ (double)Sqrt_:(double)A {
-   
++ (double)sqrt_:(double)X {
+    if(X <= 1) {
+        return 1;
+    }
+    
+    double lo = 1.0;
+    double hi = X;
+    
+    while (hi - lo > 0.00001) {
+        double mid = lo + (hi - lo) / 2;
+        
+        if(mid * mid - X > 0.00001) {
+            hi = mid;
+        } else {
+            lo = mid;
+        }
+    }
+    return lo;
 }
 
 @end
