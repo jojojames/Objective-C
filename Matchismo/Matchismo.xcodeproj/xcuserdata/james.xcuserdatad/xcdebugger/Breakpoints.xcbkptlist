@@ -112,35 +112,35 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Matchismo/CardGameViewController.m"
-         timestampString = "380945327.331843"
+         timestampString = "380946908.145664"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
-         landmarkName = "@interface CardGameViewController()"
-         landmarkType = "2">
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "cardButtons"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Matchismo/CardGameViewController.m"
-         timestampString = "380945327.331843"
+         timestampString = "380947274.059774"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56">
+         startingLineNumber = "76"
+         endingLineNumber = "76">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Matchismo/CardGameViewController.m"
-         timestampString = "380945327.331843"
+         timestampString = "380947274.059774"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51">
+         startingLineNumber = "71"
+         endingLineNumber = "71">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
