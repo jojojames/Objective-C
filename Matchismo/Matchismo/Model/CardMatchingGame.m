@@ -10,6 +10,7 @@
 
 @interface CardMatchingGame ()
 @property (strong, nonatomic) NSMutableArray *cards;
+@property (strong, nonatomic) NSMutableArray *recentPicks;
 @property (nonatomic) int score;
 @end
 
@@ -18,6 +19,11 @@
 - (NSMutableArray *)cards {
     if (!_cards) _cards = [[NSMutableArray alloc] init];
     return _cards;
+}
+
+- (NSMutableArray *)recentPicks {
+    if (!_recentPicks) _recentPicks = [[NSMutableArray alloc] init];
+    return _recentPicks;
 }
 
 - (id)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck {
@@ -39,12 +45,23 @@
     return (index < self.cards.count) ? self.cards[index] : nil;
 }
 
+- (Card *)recentCard {
+    if(self.recentPicks.count > 2 ) {
+        Card * mostRecentCard = [self.recentPicks lastObject];
+        [self.recentPicks removeLastObject];
+        return mostRecentCard;
+    } else {
+        return [self.recentPicks lastObject];
+    }
+}
+
 #define FLIP_COST 1
 #define MISMATCH_PENALTY 2
 #define MATCH_BONUS 4
 
 - (void)flipCardAtIndex:(NSUInteger)index {
     Card *card = [self cardAtIndex:index];
+    [self.recentPicks addObject:card];
     
     if (!card.isUnplayable) {
         if(!card.isFaceUp) {

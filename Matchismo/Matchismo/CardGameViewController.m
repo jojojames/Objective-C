@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *describeLabel;
 @end
 
 @implementation CardGameViewController
@@ -34,10 +35,6 @@
 - (void)setCardButtons:(NSArray *)cardButtons {
     _cardButtons = cardButtons;
     [self updateUI];
-    //for (UIButton *cardButton in cardButtons) {
-     //   Card *card = [self.deck drawRandomCard];
-      //  [cardButton setTitle:card.contents forState:UIControlStateSelected];
-    //}
 }
 
 - (void)updateUI {
@@ -48,7 +45,12 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+        //self.describeLabel.text = [NSString stringWithFormat:@"Matched %@ and %@", [self.game recentCard].contents, [self.game recentCard].contents];
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    
+    
+    //self.describeLabel.text = [NSString stringWithFormat:@"Matched: %d", card.contents];
     
 }
 
