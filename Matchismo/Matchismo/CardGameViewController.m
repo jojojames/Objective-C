@@ -45,7 +45,9 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-        //self.describeLabel.text = [NSString stringWithFormat:@"Matched %@ and %@", [self.game recentCard].contents, [self.game recentCard].contents];
+        //self.describeLabel.text = [NSString stringWithFormat:@"Matched %@", [self.game recentCard].contents];
+        //self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game recentCard].contents];
+        
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     

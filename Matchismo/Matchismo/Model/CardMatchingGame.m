@@ -46,13 +46,14 @@
 }
 
 - (Card *)recentCard {
-    if(self.recentPicks.count > 2 ) {
-        Card * mostRecentCard = [self.recentPicks lastObject];
+    if(self.recentPicks.count != 0 ) {
+        id lastCard = [self.recentPicks lastObject];
         [self.recentPicks removeLastObject];
-        return mostRecentCard;
+        return lastCard;
     } else {
         return [self.recentPicks lastObject];
     }
+    
 }
 
 #define FLIP_COST 1
