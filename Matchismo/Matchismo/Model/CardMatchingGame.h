@@ -18,7 +18,13 @@
 
 - (Card *)cardAtIndex:(NSUInteger)index;
 
-- (Card *)recentCard;
+- (Card *)popRecentCard;
+
+- (int)recentPickCount;
+
+- (void)removeLastPick;
+
+- (bool)changeGameMode;
 
 @property (nonatomic, readonly) int score;
 @end

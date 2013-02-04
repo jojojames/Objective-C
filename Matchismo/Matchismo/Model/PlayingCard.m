@@ -20,6 +20,16 @@
             score = 4;
         }
     }
+    // for three card matching
+    if (otherCards.count == 2) {
+        PlayingCard *firstOtherCard = [otherCards objectAtIndex:0];
+        PlayingCard *secondOtherCard = [otherCards objectAtIndex:1];
+        if([firstOtherCard.suit isEqualToString:self.suit] && [secondOtherCard.suit isEqualToString:self.suit]) {
+            score = 20;
+        } else if (firstOtherCard.rank == self.rank && secondOtherCard.rank == self.rank) {
+            score = 25;
+        }
+    }
     return score;
 }
 

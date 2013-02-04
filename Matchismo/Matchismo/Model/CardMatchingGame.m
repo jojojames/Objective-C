@@ -12,9 +12,11 @@
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (strong, nonatomic) NSMutableArray *recentPicks;
 @property (nonatomic) int score;
+@property (nonatomic) bool threeCardGameMode;
 @end
 
 @implementation CardMatchingGame
+@synthesize threeCardGameMode;
 
 - (NSMutableArray *)cards {
     if (!_cards) _cards = [[NSMutableArray alloc] init];
@@ -27,6 +29,7 @@
 }
 
 - (id)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck {
+    threeCardGameMode = NO; // two card matching is the default game mode
     self = [super init];
     if (self) {
         for (int i=0; i<count; i++) {
@@ -45,15 +48,20 @@
     return (index < self.cards.count) ? self.cards[index] : nil;
 }
 
-- (Card *)recentCard {
-    if(self.recentPicks.count != 0 ) {
-        id lastCard = [self.recentPicks lastObject];
-        [self.recentPicks removeLastObject];
-        return lastCard;
-    } else {
-        return [self.recentPicks lastObject];
+- (Card *)popRecentCard {
+    id lastCard = nil;
+    if(self.recentPicks.count != 0) {
+        lastCard = [self.recentPicks lastObject];
     }
-    
+    return lastCard;
+}
+
+- (int)recentPickCount {
+    return [self.recentPicks count];
+}
+
+- (void)removeLastPick {
+    [self.recentPicks removeLastObject];
 }
 
 #define FLIP_COST 1
@@ -66,23 +74,70 @@
     
     if (!card.isUnplayable) {
         if(!card.isFaceUp) {
-            for (Card *otherCard in self.cards) {
-                if(otherCard.isFaceUp && !otherCard.isUnplayable) {
-                    int matchScore = [card match:@[otherCard]];
-                    if(matchScore) {
-                        otherCard.unplayable = YES;
-                        card.unplayable = YES;
-                        self.score += matchScore * MATCH_BONUS;
-                    } else {
-                        otherCard.faceUp = NO;
-                        self.score -= MISMATCH_PENALTY;
+            if(threeCardGameMode) {
+                NSMutableArray *recentCardArray = [[NSMutableArray alloc] init];
+                for(Card *otherCard in self.cards) {
+                    if(otherCard.isFaceUp && !otherCard.isUnplayable) {
+                        [self.recentPicks addObject:otherCard];
+                        [recentCardArray addObject:otherCard];
                     }
-                    break;
                 }
+                
+                /* Wait until the third flip to flip cards back. */
+                if(recentCardArray.count <= 1) {
+                    card.faceUp = !card.isFaceUp;
+                    return;
+                }
+                
+                int matchScore = [card match:recentCardArray];
+                
+                /* If there's a score, set the cards to be unplayable. */
+                if(matchScore) {
+                    for(Card *pickedCards in recentCardArray) {
+                        pickedCards.unplayable = YES;
+                    }
+                    card.unplayable = YES;
+                    self.score += matchScore * MATCH_BONUS;
+                    /* Else, set the cards to be faced down. */
+                } else {
+                    for(Card *pickedCards in recentCardArray) {
+                        pickedCards.faceUp = NO;
+                    }
+                    self.score -= MISMATCH_PENALTY;
+                }
+                self.score -=FLIP_COST;
+            } else {
+                /* Two card game mode. */
+                for (Card *otherCard in self.cards) {
+                    if(otherCard.isFaceUp && !otherCard.isUnplayable) {
+                        [self.recentPicks addObject:otherCard];
+                        int matchScore = [card match:@[otherCard]];
+                        if(matchScore) {
+                            otherCard.unplayable = YES;
+                            card.unplayable = YES;
+                            self.score += matchScore * MATCH_BONUS;
+                        } else {
+                            otherCard.faceUp = NO;
+                            self.score -= MISMATCH_PENALTY;
+                        }
+                        break;
+                    }
+                }
+                self.score -= FLIP_COST;
             }
-            self.score -= FLIP_COST;
+            card.faceUp = !card.isFaceUp;
         }
-        card.faceUp = !card.isFaceUp;
     }
 }
+
+/* Switch the game mode,f if threeCardGameMode is true, switch it to the opposite mode, twoCardGameMode. */
+- (bool)changeGameMode {
+    if(threeCardGameMode) {
+        threeCardGameMode = NO;
+    } else {
+        threeCardGameMode = YES;
+    }
+    return threeCardGameMode;
+}
+
 @end

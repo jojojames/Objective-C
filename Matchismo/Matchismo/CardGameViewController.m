@@ -13,22 +13,20 @@
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *flipLabel; // label of the flipCount
 @property (nonatomic) int flipCount; // holds the count everytime a card is selected
-@property (strong, nonatomic) Deck *deck; // holds the 52 cards
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *describeLabel;
+@property (nonatomic) int oldScore;
+@property (nonatomic) bool threeCardGameMode;
 @end
 
 @implementation CardGameViewController
-
-- (Deck *)deck {
-    if(!_deck) _deck = [[PlayingCardDeck alloc] init];
-    return _deck;
-}
+@synthesize oldScore;
+@synthesize threeCardGameMode;
 
 - (CardMatchingGame *)game {
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:self.deck];
+    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
     return _game;
 }
 
@@ -38,22 +36,91 @@
 }
 
 - (void)updateUI {
+    UIImage *cardBackImage = [UIImage imageNamed:@"jojoback.jpg"];
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
         [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
+
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-        //self.describeLabel.text = [NSString stringWithFormat:@"Matched %@", [self.game recentCard].contents];
-        //self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game recentCard].contents];
         
+        // set the back of the card
+        if(cardButton.isSelected) {
+            [cardButton setImage:nil forState:UIControlStateNormal];
+        } else {
+            [cardButton setImage:cardBackImage forState:UIControlStateNormal];
+        }
     }
+    [self describeGameState];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+}
+
+- (void)describeGameState {
+    if(threeCardGameMode) {
+        [self threeCardDescribeGameState];
+    } else {
+        [self twoCardDescribeGameState];
+    }
+}
+
+/* Describes the state of the game if the game mode is for matching two cards. */
+- (void)twoCardDescribeGameState {
+    if([self.game recentPickCount] == 1) {
+        self.describeLabel.text = [NSString stringWithFormat:@"Flipped up %@", [self.game popRecentCard].contents];
+        [self.game removeLastPick];
+    } else if ([self.game recentPickCount] == 2) {
+        int amountIncreased = self.game.score - oldScore;
+        if(oldScore < self.game.score) {
+            self.describeLabel.text = [NSString stringWithFormat:@"Matched %@", [self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:@" for "];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[NSString stringWithFormat:@"%i", amountIncreased]];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:@" points!"];
+        } else if (oldScore > self.game.score) {
+            self.describeLabel.text = [NSString stringWithFormat:@"Didn't Match %@", [self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game popRecentCard].contents];
+            [self.game removeLastPick];
+        }
+    }
     
-    
-    //self.describeLabel.text = [NSString stringWithFormat:@"Matched: %d", card.contents];
-    
+}
+
+/* Describes the state of the game if the game mode is for matching three cards. */
+- (void)threeCardDescribeGameState {
+    if([self.game recentPickCount] == 1) {
+        self.describeLabel.text = [NSString stringWithFormat:@"Flipped up %@", [self.game popRecentCard].contents];
+        [self.game removeLastPick];
+    } else if ([self.game recentPickCount] == 2) {
+        self.describeLabel.text = [NSString stringWithFormat:@"Flipped up %@ and ", [self.game popRecentCard].contents];
+        [self.game removeLastPick];
+        self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game popRecentCard].contents];
+        [self.game removeLastPick];
+    } else if ([self.game recentPickCount] == 3) {
+        if(oldScore < self.game.score) {
+            int amountIncreased = self.game.score - oldScore;
+            self.describeLabel.text = [NSString stringWithFormat:@"Matched %@", [self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:@" for "];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[NSString stringWithFormat:@"%i", amountIncreased]];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:@" points!"];
+        } else {
+            self.describeLabel.text = [NSString stringWithFormat:@"Didn't matched %@", [self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game popRecentCard].contents];
+            [self.game removeLastPick];
+            self.describeLabel.text = [self.describeLabel.text stringByAppendingString:[self.game popRecentCard].contents];
+            [self.game removeLastPick];
+        }
+    }
 }
 
 - (void)setFlipCount:(int)flipCount {
@@ -62,11 +129,29 @@
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
-    //sender.selected = !sender.isSelected;
+    oldScore = [self.game score];
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
 }
 
+/* Allocate a new deck and allocate a new CardMatchingGame, 
+ cardButtons do not need to be reallocated because the number of cards are the same throughout. 
+ The game always starts out as two card mode. */
+- (IBAction)dealPressed:(UIButton *)sender {
+    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+    self.flipCount = 0;
+    self.describeLabel.text = [NSString stringWithFormat:@""];
+    [self updateUI];
+}
+
+/* Changes the game mode from two cards to three card game mode. If flipping started already,
+ disable the switch's ability to change the game mode. */
+- (IBAction)switchPressed:(UISwitch *)sender {
+    if(self.flipCount > 0) {
+        return;
+    }
+    threeCardGameMode = [self.game changeGameMode];
+}
 
 @end

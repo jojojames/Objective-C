@@ -53,7 +53,7 @@
     return [CalculatorBrain runProgram:self.program];
 }
     
-    
+// read only property, so only a getter
 - (id)program {
     return [self.programStack copy];
 }

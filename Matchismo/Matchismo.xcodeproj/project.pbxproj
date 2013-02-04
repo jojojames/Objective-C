@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AE1D3D016B4C4990045EFC1 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1D3CF16B4C4990045EFC1 /* CardMatchingGame.m */; };
+		1AEED39716B6176400BD171D /* jojoback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1AEED39616B6176400BD171D /* jojoback.jpg */; };
 		1AF00E7B16A4D617002E6D33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7A16A4D617002E6D33 /* UIKit.framework */; };
 		1AF00E7D16A4D617002E6D33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7C16A4D617002E6D33 /* Foundation.framework */; };
 		1AF00E7F16A4D617002E6D33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7E16A4D617002E6D33 /* CoreGraphics.framework */; };
@@ -23,11 +24,16 @@
 		1AF00EA316A4EB78002E6D33 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF00EA216A4EB78002E6D33 /* Deck.m */; };
 		1AF00EA616A4ECCE002E6D33 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF00EA516A4ECCE002E6D33 /* PlayingCard.m */; };
 		1AF00EA916A51EB6002E6D33 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF00EA816A51EB6002E6D33 /* PlayingCardDeck.m */; };
+		1AF9ABDE16BF50D900ED5E08 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9ABDD16BF50D900ED5E08 /* SetGameViewController.m */; };
+		1AF9ABE016BF57EC00ED5E08 /* doghouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF9ABDF16BF57EC00ED5E08 /* doghouse.png */; };
+		1AF9ABE216BF57F300ED5E08 /* dogpaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF9ABE116BF57F300ED5E08 /* dogpaw.png */; };
+		1AF9ABE416BF605C00ED5E08 /* backgroundcolorforsetgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF9ABE316BF605C00ED5E08 /* backgroundcolorforsetgame.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1AE1D3CE16B4C4990045EFC1 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		1AE1D3CF16B4C4990045EFC1 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		1AEED39616B6176400BD171D /* jojoback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = jojoback.jpg; path = ../../../../Pictures/jojoback.jpg; sourceTree = "<group>"; };
 		1AF00E7616A4D617002E6D33 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF00E7A16A4D617002E6D33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AF00E7C16A4D617002E6D33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,6 +58,11 @@
 		1AF00EA516A4ECCE002E6D33 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		1AF00EA716A51EB6002E6D33 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		1AF00EA816A51EB6002E6D33 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		1AF9ABDC16BF50D900ED5E08 /* SetGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
+		1AF9ABDD16BF50D900ED5E08 /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
+		1AF9ABDF16BF57EC00ED5E08 /* doghouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doghouse.png; sourceTree = SOURCE_ROOT; };
+		1AF9ABE116BF57F300ED5E08 /* dogpaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogpaw.png; sourceTree = SOURCE_ROOT; };
+		1AF9ABE316BF605C00ED5E08 /* backgroundcolorforsetgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundcolorforsetgame.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +115,8 @@
 				1AF00EA016A4EB3C002E6D33 /* Model */,
 				1AF00E9516A4D617002E6D33 /* CardGameViewController.h */,
 				1AF00E9616A4D617002E6D33 /* CardGameViewController.m */,
+				1AF9ABDC16BF50D900ED5E08 /* SetGameViewController.h */,
+				1AF9ABDD16BF50D900ED5E08 /* SetGameViewController.m */,
 				1AF00E8116A4D617002E6D33 /* Supporting Files */,
 			);
 			path = Matchismo;
@@ -136,6 +149,10 @@
 				1AF00EA716A51EB6002E6D33 /* PlayingCardDeck.h */,
 				1AF00EA816A51EB6002E6D33 /* PlayingCardDeck.m */,
 				1AF00EA516A4ECCE002E6D33 /* PlayingCard.m */,
+				1AEED39616B6176400BD171D /* jojoback.jpg */,
+				1AF9ABDF16BF57EC00ED5E08 /* doghouse.png */,
+				1AF9ABE116BF57F300ED5E08 /* dogpaw.png */,
+				1AF9ABE316BF605C00ED5E08 /* backgroundcolorforsetgame.png */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +214,10 @@
 				1AF00E8F16A4D617002E6D33 /* Default@2x.png in Resources */,
 				1AF00E9116A4D617002E6D33 /* Default-568h@2x.png in Resources */,
 				1AF00E9416A4D617002E6D33 /* MainStoryboard.storyboard in Resources */,
+				1AEED39716B6176400BD171D /* jojoback.jpg in Resources */,
+				1AF9ABE016BF57EC00ED5E08 /* doghouse.png in Resources */,
+				1AF9ABE216BF57F300ED5E08 /* dogpaw.png in Resources */,
+				1AF9ABE416BF605C00ED5E08 /* backgroundcolorforsetgame.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +236,7 @@
 				1AF00EA616A4ECCE002E6D33 /* PlayingCard.m in Sources */,
 				1AF00EA916A51EB6002E6D33 /* PlayingCardDeck.m in Sources */,
 				1AE1D3D016B4C4990045EFC1 /* CardMatchingGame.m in Sources */,
+				1AF9ABDE16BF50D900ED5E08 /* SetGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
