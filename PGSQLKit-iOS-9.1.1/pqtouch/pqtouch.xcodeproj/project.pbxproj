@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		43CD0E7A1149960B00A5E24B /* External Configure */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 43CD0E851149963300A5E24B /* Build configuration list for PBXAggregateTarget "External Configure" */;
+			buildPhases = (
+				43CD0E791149960B00A5E24B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "External Configure";
+			productName = "External Configure";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		432A58FE14451A2B00404934 /* chklocale.c in Sources */ = {isa = PBXBuildFile; fileRef = 432A58FD14451A2B00404934 /* chklocale.c */; };
+		43CD0E6D1149954E00A5E24B /* fe-auth.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E6B1149954E00A5E24B /* fe-auth.c */; };
+		43CD0E871149964300A5E24B /* fe-connect.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E861149964300A5E24B /* fe-connect.c */; };
+		43CD0E91114996AE00A5E24B /* fe-exec.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E8F114996AE00A5E24B /* fe-exec.c */; };
+		43CD0E92114996AE00A5E24B /* fe-misc.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E90114996AE00A5E24B /* fe-misc.c */; };
+		43CD0E97114996CB00A5E24B /* fe-lobj.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E95114996CB00A5E24B /* fe-lobj.c */; };
+		43CD0E98114996CB00A5E24B /* fe-print.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E96114996CB00A5E24B /* fe-print.c */; };
+		43CD0EA2114996EB00A5E24B /* fe-protocol2.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E9B114996EB00A5E24B /* fe-protocol2.c */; };
+		43CD0EA3114996EB00A5E24B /* fe-protocol3.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E9C114996EB00A5E24B /* fe-protocol3.c */; };
+		43CD0EA4114996EB00A5E24B /* fe-secure.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E9D114996EB00A5E24B /* fe-secure.c */; };
+		43CD0EA5114996EB00A5E24B /* pqexpbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0E9E114996EB00A5E24B /* pqexpbuffer.c */; };
+		43CD0EA7114996EB00A5E24B /* pqsignal.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EA0114996EB00A5E24B /* pqsignal.c */; };
+		43CD0EB71149974A00A5E24B /* libpq-events.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EB51149974A00A5E24B /* libpq-events.c */; };
+		43CD0EBC1149975D00A5E24B /* md5.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EBB1149975D00A5E24B /* md5.c */; };
+		43CD0EC5114997B200A5E24B /* encnames.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EBF114997B200A5E24B /* encnames.c */; };
+		43CD0EC6114997B200A5E24B /* ip.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EC0114997B200A5E24B /* ip.c */; };
+		43CD0EC7114997B200A5E24B /* noblock.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EC1114997B200A5E24B /* noblock.c */; };
+		43CD0EC8114997B200A5E24B /* pgstrcasecmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EC2114997B200A5E24B /* pgstrcasecmp.c */; };
+		43CD0EC9114997B200A5E24B /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EC3114997B200A5E24B /* thread.c */; };
+		43CD0ECA114997B200A5E24B /* wchar.c in Sources */ = {isa = PBXBuildFile; fileRef = 43CD0EC4114997B200A5E24B /* wchar.c */; };
+		AA747D9F0F9514B9006C5449 /* pqtouch_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* pqtouch_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		432A58FB1445191400404934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43CD0E7A1149960B00A5E24B;
+			remoteInfo = "External Configure";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		432A58FD14451A2B00404934 /* chklocale.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = chklocale.c; path = "postgresql/versions/postgresql-9.1.1/src/port/chklocale.c"; sourceTree = "<group>"; };
+		43CD0E2611497E1E00A5E24B /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/Makefile"; sourceTree = "<group>"; };
+		43CD0E6B1149954E00A5E24B /* fe-auth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-auth.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-auth.c"; sourceTree = "<group>"; };
+		43CD0E6C1149954E00A5E24B /* fe-auth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "fe-auth.h"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-auth.h"; sourceTree = "<group>"; };
+		43CD0E861149964300A5E24B /* fe-connect.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-connect.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-connect.c"; sourceTree = "<group>"; };
+		43CD0E8F114996AE00A5E24B /* fe-exec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-exec.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-exec.c"; sourceTree = "<group>"; };
+		43CD0E90114996AE00A5E24B /* fe-misc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-misc.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-misc.c"; sourceTree = "<group>"; };
+		43CD0E95114996CB00A5E24B /* fe-lobj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-lobj.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-lobj.c"; sourceTree = "<group>"; };
+		43CD0E96114996CB00A5E24B /* fe-print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-print.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-print.c"; sourceTree = "<group>"; };
+		43CD0E9B114996EB00A5E24B /* fe-protocol2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-protocol2.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-protocol2.c"; sourceTree = "<group>"; };
+		43CD0E9C114996EB00A5E24B /* fe-protocol3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-protocol3.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-protocol3.c"; sourceTree = "<group>"; };
+		43CD0E9D114996EB00A5E24B /* fe-secure.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "fe-secure.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/fe-secure.c"; sourceTree = "<group>"; };
+		43CD0E9E114996EB00A5E24B /* pqexpbuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pqexpbuffer.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/pqexpbuffer.c"; sourceTree = "<group>"; };
+		43CD0E9F114996EB00A5E24B /* pqexpbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pqexpbuffer.h; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/pqexpbuffer.h"; sourceTree = "<group>"; };
+		43CD0EA0114996EB00A5E24B /* pqsignal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pqsignal.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/pqsignal.c"; sourceTree = "<group>"; };
+		43CD0EA1114996EB00A5E24B /* pqsignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pqsignal.h; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/pqsignal.h"; sourceTree = "<group>"; };
+		43CD0EB51149974A00A5E24B /* libpq-events.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "libpq-events.c"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/libpq-events.c"; sourceTree = "<group>"; };
+		43CD0EB61149974A00A5E24B /* libpq-events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "libpq-events.h"; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/libpq-events.h"; sourceTree = "<group>"; };
+		43CD0EBB1149975D00A5E24B /* md5.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = md5.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/md5.c"; sourceTree = "<group>"; };
+		43CD0EBF114997B200A5E24B /* encnames.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = encnames.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/encnames.c"; sourceTree = "<group>"; };
+		43CD0EC0114997B200A5E24B /* ip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ip.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/ip.c"; sourceTree = "<group>"; };
+		43CD0EC1114997B200A5E24B /* noblock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = noblock.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/noblock.c"; sourceTree = "<group>"; };
+		43CD0EC2114997B200A5E24B /* pgstrcasecmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pgstrcasecmp.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/pgstrcasecmp.c"; sourceTree = "<group>"; };
+		43CD0EC3114997B200A5E24B /* thread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = thread.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/thread.c"; sourceTree = "<group>"; };
+		43CD0EC4114997B200A5E24B /* wchar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = wchar.c; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/wchar.c"; sourceTree = "<group>"; };
+		43CD0ECD114997DF00A5E24B /* exports.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = exports.list; path = "postgresql/versions/postgresql-9.1.1/src/interfaces/libpq/exports.list"; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* pqtouch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pqtouch_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libpqtouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpqtouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libpqtouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* pqtouch */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = pqtouch;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				43CD0E1E11497DEC00A5E24B /* libpq */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* pqtouch_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		43CD0E1E11497DEC00A5E24B /* libpq */ = {
+			isa = PBXGroup;
+			children = (
+				432A58FD14451A2B00404934 /* chklocale.c */,
+				43CD0ECD114997DF00A5E24B /* exports.list */,
+				43CD0EBF114997B200A5E24B /* encnames.c */,
+				43CD0EC0114997B200A5E24B /* ip.c */,
+				43CD0EC1114997B200A5E24B /* noblock.c */,
+				43CD0EC2114997B200A5E24B /* pgstrcasecmp.c */,
+				43CD0EC3114997B200A5E24B /* thread.c */,
+				43CD0EC4114997B200A5E24B /* wchar.c */,
+				43CD0EBB1149975D00A5E24B /* md5.c */,
+				43CD0EB51149974A00A5E24B /* libpq-events.c */,
+				43CD0EB61149974A00A5E24B /* libpq-events.h */,
+				43CD0E9B114996EB00A5E24B /* fe-protocol2.c */,
+				43CD0E9C114996EB00A5E24B /* fe-protocol3.c */,
+				43CD0E9D114996EB00A5E24B /* fe-secure.c */,
+				43CD0E9E114996EB00A5E24B /* pqexpbuffer.c */,
+				43CD0E9F114996EB00A5E24B /* pqexpbuffer.h */,
+				43CD0EA0114996EB00A5E24B /* pqsignal.c */,
+				43CD0EA1114996EB00A5E24B /* pqsignal.h */,
+				43CD0E95114996CB00A5E24B /* fe-lobj.c */,
+				43CD0E96114996CB00A5E24B /* fe-print.c */,
+				43CD0E8F114996AE00A5E24B /* fe-exec.c */,
+				43CD0E90114996AE00A5E24B /* fe-misc.c */,
+				43CD0E861149964300A5E24B /* fe-connect.c */,
+				43CD0E6B1149954E00A5E24B /* fe-auth.c */,
+				43CD0E6C1149954E00A5E24B /* fe-auth.h */,
+				43CD0E2611497E1E00A5E24B /* Makefile */,
+			);
+			name = libpq;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* pqtouch_Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* pqtouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "pqtouch" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				432A58FC1445191400404934 /* PBXTargetDependency */,
+			);
+			name = pqtouch;
+			productName = pqtouch;
+			productReference = D2AAC07E0554694100DB518D /* libpqtouch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "pqtouch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* pqtouch */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* pqtouch */,
+				43CD0E7A1149960B00A5E24B /* External Configure */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43CD0E791149960B00A5E24B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd postgresql/current\n./configure --prefix=/opt/ios/postgresql \ncd src/interfaces/libpq\nmake\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CD0E6D1149954E00A5E24B /* fe-auth.c in Sources */,
+				43CD0E871149964300A5E24B /* fe-connect.c in Sources */,
+				43CD0E91114996AE00A5E24B /* fe-exec.c in Sources */,
+				43CD0E92114996AE00A5E24B /* fe-misc.c in Sources */,
+				43CD0E97114996CB00A5E24B /* fe-lobj.c in Sources */,
+				43CD0E98114996CB00A5E24B /* fe-print.c in Sources */,
+				43CD0EA2114996EB00A5E24B /* fe-protocol2.c in Sources */,
+				43CD0EA3114996EB00A5E24B /* fe-protocol3.c in Sources */,
+				43CD0EA4114996EB00A5E24B /* fe-secure.c in Sources */,
+				43CD0EA5114996EB00A5E24B /* pqexpbuffer.c in Sources */,
+				43CD0EA7114996EB00A5E24B /* pqsignal.c in Sources */,
+				43CD0EB71149974A00A5E24B /* libpq-events.c in Sources */,
+				43CD0EBC1149975D00A5E24B /* md5.c in Sources */,
+				43CD0EC5114997B200A5E24B /* encnames.c in Sources */,
+				43CD0EC6114997B200A5E24B /* ip.c in Sources */,
+				43CD0EC7114997B200A5E24B /* noblock.c in Sources */,
+				43CD0EC8114997B200A5E24B /* pgstrcasecmp.c in Sources */,
+				43CD0EC9114997B200A5E24B /* thread.c in Sources */,
+				43CD0ECA114997B200A5E24B /* wchar.c in Sources */,
+				432A58FE14451A2B00404934 /* chklocale.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		432A58FC1445191400404934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43CD0E7A1149960B00A5E24B /* External Configure */;
+			targetProxy = 432A58FB1445191400404934 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/pqtouch.dst;
+				EXPORTED_SYMBOLS_FILE = exports.list;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = pqtouch_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					./postgresql/current/src/port,
+					./postgresql/current/src/include,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = (
+					"-DFRONTEND",
+					"-DUNSAFE_STAT_OK",
+					"-DSO_MAJOR_VERSION=5",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = pqtouch;
+				SDKROOT = iphoneos;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				VERSIONING_SYSTEM = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/pqtouch.dst;
+				EXPORTED_SYMBOLS_FILE = exports.list;
+				GCC_MODEL_TUNING = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = pqtouch_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					./postgresql/current/src/port,
+					./postgresql/current/src/include,
+				);
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_CFLAGS = (
+					"-DFRONTEND",
+					"-DUNSAFE_STAT_OK",
+					"-DSO_MAJOR_VERSION=5",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = pqtouch;
+				SDKROOT = iphoneos;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+				VERSIONING_SYSTEM = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		43CD0E7B1149960C00A5E24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = "External Configure";
+			};
+			name = Debug;
+		};
+		43CD0E7C1149960C00A5E24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				PRODUCT_NAME = "External Configure";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "pqtouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "pqtouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43CD0E851149963300A5E24B /* Build configuration list for PBXAggregateTarget "External Configure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43CD0E7B1149960C00A5E24B /* Debug */,
+				43CD0E7C1149960C00A5E24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

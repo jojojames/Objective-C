@@ -29,7 +29,6 @@
 }
 
 - (id)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck {
-    threeCardGameMode = NO; // two card matching is the default game mode
     self = [super init];
     if (self) {
         for (int i=0; i<count; i++) {

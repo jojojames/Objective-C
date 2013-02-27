@@ -36,37 +36,38 @@
 }
 
 - (void)updateUI {
-    UIImage *cardBackImage = [UIImage imageNamed:@"jojoback.jpg"];
+    //UIImage *cardBackImage = [UIImage imageNamed:@"jojoback.jpg"];
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
-        [cardButton setTitle:card.contents forState:UIControlStateSelected];
-        [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
-
+        
+        [self setCardContents:cardButton using:card];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
         
         // set the back of the card
-        if(cardButton.isSelected) {
-            [cardButton setImage:nil forState:UIControlStateNormal];
-        } else {
-            [cardButton setImage:cardBackImage forState:UIControlStateNormal];
-        }
+        [self setCardButtonBackground:cardButton];
+        
     }
     [self describeGameState];
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 }
 
-- (void)describeGameState {
-    if(threeCardGameMode) {
-        [self threeCardDescribeGameState];
+- (void)setCardButtonBackground:(UIButton *)cardButton {
+    UIImage *cardBackImage = [UIImage imageNamed:@"defaultbackimage.png"];
+    if(cardButton.isSelected) {
+        [cardButton setImage:nil forState:UIControlStateNormal];
     } else {
-        [self twoCardDescribeGameState];
+        [cardButton setImage:cardBackImage forState:UIControlStateNormal];
     }
 }
 
-/* Describes the state of the game if the game mode is for matching two cards. */
-- (void)twoCardDescribeGameState {
+- (void)setCardContents:(UIButton *)cardButton using:(Card *)card {
+    [cardButton setTitle:card.contents forState:UIControlStateSelected];
+    [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
+}
+
+- (void)describeGameState {
     if([self.game recentPickCount] == 1) {
         self.describeLabel.text = [NSString stringWithFormat:@"Flipped up %@", [self.game popRecentCard].contents];
         [self.game removeLastPick];
@@ -87,10 +88,9 @@
             [self.game removeLastPick];
         }
     }
-    
 }
 
-/* Describes the state of the game if the game mode is for matching three cards. */
+/* Describes the state of the game if the game mode is for matching three cards. , obsolete in this file*/
 - (void)threeCardDescribeGameState {
     if([self.game recentPickCount] == 1) {
         self.describeLabel.text = [NSString stringWithFormat:@"Flipped up %@", [self.game popRecentCard].contents];
@@ -139,19 +139,18 @@
  cardButtons do not need to be reallocated because the number of cards are the same throughout. 
  The game always starts out as two card mode. */
 - (IBAction)dealPressed:(UIButton *)sender {
-    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+    //self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[self chooseDeck]];
+    
     self.flipCount = 0;
     self.describeLabel.text = [NSString stringWithFormat:@""];
+    threeCardGameMode = NO;
     [self updateUI];
 }
 
-/* Changes the game mode from two cards to three card game mode. If flipping started already,
- disable the switch's ability to change the game mode. */
-- (IBAction)switchPressed:(UISwitch *)sender {
-    if(self.flipCount > 0) {
-        return;
-    }
-    threeCardGameMode = [self.game changeGameMode];
+- (Deck *)chooseDeck {
+    return [[PlayingCardDeck alloc] init];
 }
+
 
 @end

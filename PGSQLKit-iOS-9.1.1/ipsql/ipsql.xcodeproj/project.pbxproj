@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* ipsqlAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ipsqlAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* ipsqlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ipsqlViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* ipsqlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ipsqlViewController.m */; };
+		43259DD61444875D00E2537C /* libpqtouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43259DD5144485CD00E2537C /* libpqtouch.a */; };
+		432A591714451C4C00404934 /* libpq in Resources */ = {isa = PBXBuildFile; fileRef = 432A590514451C4C00404934 /* libpq */; };
+		432A591814451C4C00404934 /* postgresql in Resources */ = {isa = PBXBuildFile; fileRef = 432A591114451C4C00404934 /* postgresql */; };
+		433F328F1148AAFB009BB690 /* pg-cross-compile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 433F328E1148AAFB009BB690 /* pg-cross-compile.txt */; };
+		7B70C14B100D8F6F00046E2F /* PGSQLColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70C13F100D8F6F00046E2F /* PGSQLColumn.m */; };
+		7B70C14C100D8F6F00046E2F /* PGSQLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70C141100D8F6F00046E2F /* PGSQLConnection.m */; };
+		7B70C14D100D8F6F00046E2F /* PGSQLConnectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70C143100D8F6F00046E2F /* PGSQLConnectionInfo.m */; };
+		7B70C14E100D8F6F00046E2F /* PGSQLField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70C145100D8F6F00046E2F /* PGSQLField.m */; };
+		7B70C14F100D8F6F00046E2F /* PGSQLRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70C148100D8F6F00046E2F /* PGSQLRecord.m */; };
+		7B70C150100D8F6F00046E2F /* PGSQLRecordset.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B70C14A100D8F6F00046E2F /* PGSQLRecordset.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43259DD4144485CD00E2537C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43CD0EEA114998C100A5E24B /* pqtouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = pqtouch;
+		};
+		43259DD71444877900E2537C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43CD0EEA114998C100A5E24B /* pqtouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = pqtouch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* ipsqlAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipsqlAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* ipsqlAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ipsqlAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* ipsql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ipsql.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* ipsqlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ipsqlViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* ipsqlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipsqlViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* ipsqlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ipsqlViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* ipsql_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ipsql_Prefix.pch; sourceTree = "<group>"; };
+		432A590014451C4C00404934 /* ecpg_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecpg_config.h; path = ../../pqtouch/include/ecpg_config.h; sourceTree = "<group>"; };
+		432A590114451C4C00404934 /* ecpg_informix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecpg_informix.h; path = ../../pqtouch/include/ecpg_informix.h; sourceTree = "<group>"; };
+		432A590214451C4C00404934 /* ecpgerrno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecpgerrno.h; path = ../../pqtouch/include/ecpgerrno.h; sourceTree = "<group>"; };
+		432A590314451C4C00404934 /* ecpglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecpglib.h; path = ../../pqtouch/include/ecpglib.h; sourceTree = "<group>"; };
+		432A590414451C4C00404934 /* ecpgtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecpgtype.h; path = ../../pqtouch/include/ecpgtype.h; sourceTree = "<group>"; };
+		432A590514451C4C00404934 /* libpq */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libpq; path = ../../pqtouch/include/libpq; sourceTree = "<group>"; };
+		432A590614451C4C00404934 /* libpq-events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "libpq-events.h"; path = "../../pqtouch/include/libpq-events.h"; sourceTree = "<group>"; };
+		432A590714451C4C00404934 /* libpq-fe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "libpq-fe.h"; path = "../../pqtouch/include/libpq-fe.h"; sourceTree = "<group>"; };
+		432A590814451C4C00404934 /* pg_config_manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pg_config_manual.h; path = ../../pqtouch/include/pg_config_manual.h; sourceTree = "<group>"; };
+		432A590914451C4C00404934 /* pg_config_os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pg_config_os.h; path = ../../pqtouch/include/pg_config_os.h; sourceTree = "<group>"; };
+		432A590A14451C4C00404934 /* pg_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pg_config.h; path = ../../pqtouch/include/pg_config.h; sourceTree = "<group>"; };
+		432A590B14451C4C00404934 /* pgtypes_date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pgtypes_date.h; path = ../../pqtouch/include/pgtypes_date.h; sourceTree = "<group>"; };
+		432A590C14451C4C00404934 /* pgtypes_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pgtypes_error.h; path = ../../pqtouch/include/pgtypes_error.h; sourceTree = "<group>"; };
+		432A590D14451C4C00404934 /* pgtypes_interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pgtypes_interval.h; path = ../../pqtouch/include/pgtypes_interval.h; sourceTree = "<group>"; };
+		432A590E14451C4C00404934 /* pgtypes_numeric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pgtypes_numeric.h; path = ../../pqtouch/include/pgtypes_numeric.h; sourceTree = "<group>"; };
+		432A590F14451C4C00404934 /* pgtypes_timestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pgtypes_timestamp.h; path = ../../pqtouch/include/pgtypes_timestamp.h; sourceTree = "<group>"; };
+		432A591014451C4C00404934 /* postgres_ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = postgres_ext.h; path = ../../pqtouch/include/postgres_ext.h; sourceTree = "<group>"; };
+		432A591114451C4C00404934 /* postgresql */ = {isa = PBXFileReference; lastKnownFileType = folder; name = postgresql; path = ../../pqtouch/include/postgresql; sourceTree = "<group>"; };
+		432A591214451C4C00404934 /* sql3types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sql3types.h; path = ../../pqtouch/include/sql3types.h; sourceTree = "<group>"; };
+		432A591314451C4C00404934 /* sqlca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlca.h; path = ../../pqtouch/include/sqlca.h; sourceTree = "<group>"; };
+		432A591414451C4C00404934 /* sqlda-compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "sqlda-compat.h"; path = "../../pqtouch/include/sqlda-compat.h"; sourceTree = "<group>"; };
+		432A591514451C4C00404934 /* sqlda-native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "sqlda-native.h"; path = "../../pqtouch/include/sqlda-native.h"; sourceTree = "<group>"; };
+		432A591614451C4C00404934 /* sqlda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlda.h; path = ../../pqtouch/include/sqlda.h; sourceTree = "<group>"; };
+		432A591914451D7B00404934 /* GenDBColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenDBColumn.h; path = ../../PGSQLKit/GenDBColumn.h; sourceTree = "<group>"; };
+		432A591A14451D7B00404934 /* GenDBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenDBConnection.h; path = ../../PGSQLKit/GenDBConnection.h; sourceTree = "<group>"; };
+		432A591B14451D7B00404934 /* GenDBField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenDBField.h; path = ../../PGSQLKit/GenDBField.h; sourceTree = "<group>"; };
+		432A591C14451D7B00404934 /* GenDBRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenDBRecord.h; path = ../../PGSQLKit/GenDBRecord.h; sourceTree = "<group>"; };
+		432A591D14451D7B00404934 /* GenDBRecordset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenDBRecordset.h; path = ../../PGSQLKit/GenDBRecordset.h; sourceTree = "<group>"; };
+		433F328E1148AAFB009BB690 /* pg-cross-compile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pg-cross-compile.txt"; sourceTree = "<group>"; };
+		43CD0EEA114998C100A5E24B /* pqtouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pqtouch.xcodeproj; path = ../pqtouch/pqtouch.xcodeproj; sourceTree = SOURCE_ROOT; };
+		7B70C13E100D8F6F00046E2F /* PGSQLColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; name = PGSQLColumn.h; path = ../PGSQLKit/PGSQLColumn.h; sourceTree = SOURCE_ROOT; };
+		7B70C13F100D8F6F00046E2F /* PGSQLColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLColumn.m; path = ../PGSQLKit/PGSQLColumn.m; sourceTree = SOURCE_ROOT; };
+		7B70C140100D8F6F00046E2F /* PGSQLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; name = PGSQLConnection.h; path = ../PGSQLKit/PGSQLConnection.h; sourceTree = SOURCE_ROOT; };
+		7B70C141100D8F6F00046E2F /* PGSQLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLConnection.m; path = ../PGSQLKit/PGSQLConnection.m; sourceTree = SOURCE_ROOT; };
+		7B70C142100D8F6F00046E2F /* PGSQLConnectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; name = PGSQLConnectionInfo.h; path = ../PGSQLKit/PGSQLConnectionInfo.h; sourceTree = SOURCE_ROOT; };
+		7B70C143100D8F6F00046E2F /* PGSQLConnectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLConnectionInfo.m; path = ../PGSQLKit/PGSQLConnectionInfo.m; sourceTree = SOURCE_ROOT; };
+		7B70C144100D8F6F00046E2F /* PGSQLField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; name = PGSQLField.h; path = ../PGSQLKit/PGSQLField.h; sourceTree = SOURCE_ROOT; };
+		7B70C145100D8F6F00046E2F /* PGSQLField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLField.m; path = ../PGSQLKit/PGSQLField.m; sourceTree = SOURCE_ROOT; };
+		7B70C147100D8F6F00046E2F /* PGSQLRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; name = PGSQLRecord.h; path = ../PGSQLKit/PGSQLRecord.h; sourceTree = SOURCE_ROOT; };
+		7B70C148100D8F6F00046E2F /* PGSQLRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLRecord.m; path = ../PGSQLKit/PGSQLRecord.m; sourceTree = SOURCE_ROOT; };
+		7B70C149100D8F6F00046E2F /* PGSQLRecordset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj; name = PGSQLRecordset.h; path = ../PGSQLKit/PGSQLRecordset.h; sourceTree = SOURCE_ROOT; };
+		7B70C14A100D8F6F00046E2F /* PGSQLRecordset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLRecordset.m; path = ../PGSQLKit/PGSQLRecordset.m; sourceTree = SOURCE_ROOT; };
+		8D1107310486CEB800E47090 /* ipsql-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ipsql-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43259DD61444875D00E2537C /* libpqtouch.a in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				432A58FF14451C2800404934 /* libpq */,
+				7B70C13D100D8CC800046E2F /* PGSQLKit */,
+				1D3623240D0F684500981E51 /* ipsqlAppDelegate.h */,
+				1D3623250D0F684500981E51 /* ipsqlAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* ipsqlViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* ipsqlViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* ipsql.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				433F328E1148AAFB009BB690 /* pg-cross-compile.txt */,
+				43CD0EEA114998C100A5E24B /* pqtouch.xcodeproj */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* ipsql_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2899E5210DE3E06400AC0155 /* ipsqlViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* ipsql-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43259DD0144485CD00E2537C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43259DD5144485CD00E2537C /* libpqtouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		432A58FF14451C2800404934 /* libpq */ = {
+			isa = PBXGroup;
+			children = (
+				432A590014451C4C00404934 /* ecpg_config.h */,
+				432A590114451C4C00404934 /* ecpg_informix.h */,
+				432A590214451C4C00404934 /* ecpgerrno.h */,
+				432A590314451C4C00404934 /* ecpglib.h */,
+				432A590414451C4C00404934 /* ecpgtype.h */,
+				432A590514451C4C00404934 /* libpq */,
+				432A590614451C4C00404934 /* libpq-events.h */,
+				432A590714451C4C00404934 /* libpq-fe.h */,
+				432A590814451C4C00404934 /* pg_config_manual.h */,
+				432A590914451C4C00404934 /* pg_config_os.h */,
+				432A590A14451C4C00404934 /* pg_config.h */,
+				432A590B14451C4C00404934 /* pgtypes_date.h */,
+				432A590C14451C4C00404934 /* pgtypes_error.h */,
+				432A590D14451C4C00404934 /* pgtypes_interval.h */,
+				432A590E14451C4C00404934 /* pgtypes_numeric.h */,
+				432A590F14451C4C00404934 /* pgtypes_timestamp.h */,
+				432A591014451C4C00404934 /* postgres_ext.h */,
+				432A591114451C4C00404934 /* postgresql */,
+				432A591214451C4C00404934 /* sql3types.h */,
+				432A591314451C4C00404934 /* sqlca.h */,
+				432A591414451C4C00404934 /* sqlda-compat.h */,
+				432A591514451C4C00404934 /* sqlda-native.h */,
+				432A591614451C4C00404934 /* sqlda.h */,
+			);
+			name = libpq;
+			sourceTree = "<group>";
+		};
+		7B70C13D100D8CC800046E2F /* PGSQLKit */ = {
+			isa = PBXGroup;
+			children = (
+				432A591914451D7B00404934 /* GenDBColumn.h */,
+				432A591A14451D7B00404934 /* GenDBConnection.h */,
+				432A591B14451D7B00404934 /* GenDBField.h */,
+				432A591C14451D7B00404934 /* GenDBRecord.h */,
+				432A591D14451D7B00404934 /* GenDBRecordset.h */,
+				7B70C13E100D8F6F00046E2F /* PGSQLColumn.h */,
+				7B70C13F100D8F6F00046E2F /* PGSQLColumn.m */,
+				7B70C140100D8F6F00046E2F /* PGSQLConnection.h */,
+				7B70C141100D8F6F00046E2F /* PGSQLConnection.m */,
+				7B70C142100D8F6F00046E2F /* PGSQLConnectionInfo.h */,
+				7B70C143100D8F6F00046E2F /* PGSQLConnectionInfo.m */,
+				7B70C144100D8F6F00046E2F /* PGSQLField.h */,
+				7B70C145100D8F6F00046E2F /* PGSQLField.m */,
+				7B70C147100D8F6F00046E2F /* PGSQLRecord.h */,
+				7B70C148100D8F6F00046E2F /* PGSQLRecord.m */,
+				7B70C149100D8F6F00046E2F /* PGSQLRecordset.h */,
+				7B70C14A100D8F6F00046E2F /* PGSQLRecordset.m */,
+			);
+			name = PGSQLKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* ipsql */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ipsql" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43259DD81444877900E2537C /* PBXTargetDependency */,
+			);
+			name = ipsql;
+			productName = ipsql;
+			productReference = 1D6058910D05DD3D006BFB54 /* ipsql.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ipsql" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 43259DD0144485CD00E2537C /* Products */;
+					ProjectRef = 43CD0EEA114998C100A5E24B /* pqtouch.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* ipsql */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		43259DD5144485CD00E2537C /* libpqtouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpqtouch.a;
+			remoteRef = 43259DD4144485CD00E2537C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* ipsqlViewController.xib in Resources */,
+				433F328F1148AAFB009BB690 /* pg-cross-compile.txt in Resources */,
+				432A591714451C4C00404934 /* libpq in Resources */,
+				432A591814451C4C00404934 /* postgresql in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* ipsqlAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* ipsqlViewController.m in Sources */,
+				7B70C14B100D8F6F00046E2F /* PGSQLColumn.m in Sources */,
+				7B70C14C100D8F6F00046E2F /* PGSQLConnection.m in Sources */,
+				7B70C14D100D8F6F00046E2F /* PGSQLConnectionInfo.m in Sources */,
+				7B70C14E100D8F6F00046E2F /* PGSQLField.m in Sources */,
+				7B70C14F100D8F6F00046E2F /* PGSQLRecord.m in Sources */,
+				7B70C150100D8F6F00046E2F /* PGSQLRecordset.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43259DD81444877900E2537C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = pqtouch;
+			targetProxy = 43259DD71444877900E2537C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ipsql_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = ../pgtouch/include;
+				INFOPLIST_FILE = "ipsql-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = ipsql;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ipsql_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				HEADER_SEARCH_PATHS = ../pgtouch/include;
+				INFOPLIST_FILE = "ipsql-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = ipsql;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ipsql" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ipsql" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

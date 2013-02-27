@@ -11,7 +11,7 @@
 
 @interface CardGameViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *display;
-
+- (void)updateUI;
 
 
 @end

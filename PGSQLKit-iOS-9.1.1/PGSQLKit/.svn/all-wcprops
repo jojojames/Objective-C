@@ -1,0 +1,129 @@
+K 26
+svn:wc:ra_dav:activity-url
+V 30
+/svnroot/pgsqlformac/!svn/act/
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/pgsqlformac/!svn/ver/245/trunk/PGSQLKit
+END
+PGSQLField.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/pgsqlformac/!svn/ver/243/trunk/PGSQLKit/PGSQLField.h
+END
+PGSQLRecord.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/pgsqlformac/!svn/ver/243/trunk/PGSQLKit/PGSQLRecord.m
+END
+PGSQLPreparedStatement.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/pgsqlformac/!svn/ver/242/trunk/PGSQLKit/PGSQLPreparedStatement.h
+END
+PGSQLKit.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/pgsqlformac/!svn/ver/242/trunk/PGSQLKit/PGSQLKit.h
+END
+PGSQLKit_Prefix.pch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/pgsqlformac/!svn/ver/191/trunk/PGSQLKit/PGSQLKit_Prefix.pch
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/pgsqlformac/!svn/ver/242/trunk/PGSQLKit/Info.plist
+END
+PGSQLField.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/pgsqlformac/!svn/ver/245/trunk/PGSQLKit/PGSQLField.m
+END
+PGSQLRecordset.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/pgsqlformac/!svn/ver/243/trunk/PGSQLKit/PGSQLRecordset.h
+END
+PGSQLPreparedStatement.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/pgsqlformac/!svn/ver/242/trunk/PGSQLKit/PGSQLPreparedStatement.m
+END
+PGSQLColumn.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/pgsqlformac/!svn/ver/237/trunk/PGSQLKit/PGSQLColumn.h
+END
+PGSQLRecordset.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/pgsqlformac/!svn/ver/245/trunk/PGSQLKit/PGSQLRecordset.m
+END
+PGSQLConnection.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/pgsqlformac/!svn/ver/245/trunk/PGSQLKit/PGSQLConnection.h
+END
+PGSQLColumn.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/pgsqlformac/!svn/ver/202/trunk/PGSQLKit/PGSQLColumn.m
+END
+PGSQLConnection.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/pgsqlformac/!svn/ver/245/trunk/PGSQLKit/PGSQLConnection.m
+END
+PGSQLLogin.h
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/pgsqlformac/!svn/ver/245/trunk/PGSQLKit/PGSQLLogin.h
+END
+icon_query_tool.icns
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/pgsqlformac/!svn/ver/245/trunk/PGSQLKit/icon_query_tool.icns
+END
+PGSQLConnectionInfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/pgsqlformac/!svn/ver/242/trunk/PGSQLKit/PGSQLConnectionInfo.h
+END
+PGSQLLogin.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/pgsqlformac/!svn/ver/244/trunk/PGSQLKit/PGSQLLogin.m
+END
+PGSQLRecord.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/pgsqlformac/!svn/ver/243/trunk/PGSQLKit/PGSQLRecord.h
+END
+PGSQLConnectionInfo.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/pgsqlformac/!svn/ver/242/trunk/PGSQLKit/PGSQLConnectionInfo.m
+END

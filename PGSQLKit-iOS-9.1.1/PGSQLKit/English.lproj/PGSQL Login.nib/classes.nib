@@ -1,0 +1,25 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = NSObject; LANGUAGE = ObjC; }, 
+        {
+            ACTIONS = {onCancel = id; onConnectionDetails = id; onHelp = id; onLogin = id; }; 
+            CLASS = PGSQLLogin; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                detailsView = NSView; 
+                displayConnectionDetails = NSButton; 
+                loginPanel = NSWindow; 
+                loginPassword = NSSecureTextField; 
+                loginUserName = NSTextField; 
+                rememberConnection = NSButton; 
+                savedConnections = NSComboBox; 
+                serverDatabase = NSTextField; 
+                serverName = NSTextField; 
+                serverPort = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}
