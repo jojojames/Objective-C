@@ -26,6 +26,7 @@
 @end
 
 @implementation SetGameViewController
+@synthesize describeLabel;
 @synthesize cardProperties;
 @synthesize oldScore;
 @synthesize threeCardGameMode;
@@ -42,17 +43,17 @@
 
 /* Override the default implemenation to use Attributed Strings instead. */
 - (void)setCardContents:(UIButton *)cardButton using:(SetCard *)card {
-    NSAttributedString *defaultAttributedString;
+    NSMutableAttributedString *defaultAttributedString;
     if (card.symbol == 1) {
         cardProperties = [[NSMutableAttributedString alloc] initWithString:@"▲"];
-        defaultAttributedString = [[NSAttributedString alloc] initWithString:@"▲"];
+        defaultAttributedString = [[NSMutableAttributedString alloc] initWithString:@"▲"];
           //return @[@"▲",@"●",@"■"];
     } else if (card.symbol == 2) {
         cardProperties = [[NSMutableAttributedString alloc] initWithString:@"●"];
-        defaultAttributedString = [[NSAttributedString alloc] initWithString:@"●"];
+        defaultAttributedString = [[NSMutableAttributedString alloc] initWithString:@"●"];
     } else {
         cardProperties = [[NSMutableAttributedString alloc] initWithString:@"■"];
-        defaultAttributedString = [[NSAttributedString alloc] initWithString:@"■"];
+        defaultAttributedString = [[NSMutableAttributedString alloc] initWithString:@"■"];
     }
     [self setCardBasedOnRank:cardProperties on:card with:defaultAttributedString];
     UIColor *colorForStroke = [self setCardColors:card];
@@ -77,13 +78,14 @@
     }
     
     [self settingAttributedStringRank:defaultAttributedString using:card];
-    UIColor * colorForStroke = [self setCardColors:card];
+    UIColor * colorForStroke = [self changeColorProperty:card using:defaultAttributedString];
     [self settingAttributedStringShading:defaultAttributedString using:card withColor:colorForStroke];
     return defaultAttributedString;
 }
 
 - (void)settingAttributedStringRank:(NSMutableAttributedString *)_attributedString using:(SetCard *)card {
-    for(int i=1; i<card.rank; i++) [_attributedString appendAttributedString:_attributedString];
+    NSMutableAttributedString *duplicateString = [[NSMutableAttributedString alloc] initWithAttributedString:_attributedString];
+    for(int i=1; i<card.rank; i++) [_attributedString appendAttributedString:duplicateString];
 }
 
 - (void)settingAttributedStringShading:(NSMutableAttributedString *)_attributedString using:(SetCard *)card withColor:(UIColor *)colorForStroke {
@@ -102,23 +104,38 @@
     // Don't set a background yet. Might have to set one when a card is selected.
 }
 
-- (void)setCardBasedOnRank:(NSMutableAttributedString *)cardProperties on:(SetCard *)card with:(NSAttributedString *) defaultAttributedString {
-   for (int i=1; i<card.rank; i++) [self.cardProperties appendAttributedString:defaultAttributedString];
+- (void)setCardBasedOnRank:(NSMutableAttributedString *)cardProperties on:(SetCard *)card with:(NSMutableAttributedString *) defaultAttributedString {
+    NSMutableAttributedString * duplicateString = defaultAttributedString;
+   for (int i=1; i<card.rank; i++) [self.cardProperties appendAttributedString:duplicateString];
 }
 
+/* Contributes to attributed string's color. */
+- (UIColor *)changeColorProperty:(SetCard *)card using:(NSMutableAttributedString *)_attributedString {
+    UIColor *colorForStroke;
+    if(card.color == 1) {
+        [_attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange((0), card.rank)];
+        colorForStroke = [UIColor redColor];
+    } else if (card.color == 2) {
+        [_attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0,card.rank)];
+        colorForStroke = [UIColor greenColor];
+    } else {
+        [_attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor purpleColor] range:NSMakeRange(0,card.rank)];
+        colorForStroke = [UIColor purpleColor];
+    }
+    return colorForStroke;
+}
+
+/* Set the color of the card's symbol. */
 - (UIColor *)setCardColors:(SetCard *)card {
     // red green purple
     UIColor *colorForStroke;
     if (card.color == 1) {
-        //[cardProperties addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,card.rank)];
         [self.cardProperties addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange((0), card.rank)];
         colorForStroke = [UIColor redColor];
     } else if (card.color == 2) {
-        //[cardProperties addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0,card.rank)];
         [self.cardProperties addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0,card.rank)];
         colorForStroke = [UIColor greenColor];
     } else {
-        //[cardProperties addAttribute:NSForegroundColorAttributeName value:[UIColor purpleColor] range:NSMakeRange(0,card.rank)];
         [self.cardProperties addAttribute:NSForegroundColorAttributeName value:[UIColor purpleColor] range:NSMakeRange(0,card.rank)];
         colorForStroke = [UIColor purpleColor];
     }
@@ -143,20 +160,7 @@
 }
 
 - (void)updateUI {
-    for (UIButton *cardButton in self.cardButtons) {
-        SetCard *card = (SetCard *)[self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
-        
-        [self setCardContents:cardButton using:card];
-        cardButton.selected = card.isFaceUp;
-        cardButton.enabled = !card.isUnplayable;
-        cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-        
-        // set the back of the card
-        [self setCardButtonBackground:cardButton];
-        
-    }
-    [self describeGameState];
-    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    [super updateUI];
 }
 
 /* Describes the state of the game if the game mode is for matching three cards.  LOOK AT THIS PART*/
@@ -166,10 +170,43 @@
         NSMutableAttributedString *tempString = [[NSMutableAttributedString alloc] initWithString:@"You picked "];
         [tempString appendAttributedString:[self getCardProperties:card]];
         self.describeLabel.attributedText = tempString;
-
+        [self.game removeLastPick];
+    } else if ([self.game recentPickCount] == 2) {
+        SetCard *cardOne = (SetCard *) [self.game popRecentCard];
+        [self.game removeLastPick];
+        SetCard *cardTwo = (SetCard *) [self.game popRecentCard];
+        [self.game removeLastPick];
+        NSMutableAttributedString *tempString = [[NSMutableAttributedString alloc] initWithString:@"You picked "];
+        [tempString appendAttributedString:[self getCardProperties:cardOne]];
+        NSMutableAttributedString *andString = [[NSMutableAttributedString alloc] initWithString:@" and "];
+        [tempString appendAttributedString:andString];
+        [tempString appendAttributedString:[self getCardProperties:cardTwo]];
+        self.describeLabel.attributedText = tempString;
+    } else if ([self.game recentPickCount] == 3) {
+        SetCard * cardOne = (SetCard *) [self.game popRecentCard];
+        [self.game removeLastPick];
+        SetCard * cardTwo = (SetCard *) [self.game popRecentCard];
+        [self.game removeLastPick];
+        SetCard * cardThree = (SetCard *) [self.game popRecentCard];
+        [self.game removeLastPick];
+        if(oldScore < self.game.score) {
+            // user got the match
+            NSMutableAttributedString *tempString = [[NSMutableAttributedString alloc] initWithString:@"Matched "];
+            [tempString appendAttributedString:[self getCardProperties:cardOne]];
+            NSMutableAttributedString *comma = [[NSMutableAttributedString alloc] initWithString:@", "];
+            [tempString appendAttributedString:comma];
+            [tempString appendAttributedString:[self getCardProperties:cardTwo]];
+            NSMutableAttributedString *and = [[NSMutableAttributedString alloc] initWithString:@" and "];
+            [tempString appendAttributedString:and];
+            [tempString appendAttributedString:[self getCardProperties:cardThree]];
+            self.describeLabel.attributedText = tempString;
+            
+        } else {
+            NSMutableAttributedString *didntMatch = [[NSMutableAttributedString alloc] initWithString:@"No match!"];
+            self.describeLabel.attributedText = didntMatch;
+        }
         
     }
-    
 }
 
 - (void)setFlipCount:(int)flipCount {
@@ -192,8 +229,9 @@
     NSMutableAttributedString *emptyString = [[NSMutableAttributedString alloc] initWithString:@""];
     self.describeLabel.attributedText = emptyString;
     [[self recentCardProperties] removeAllObjects];
-    threeCardGameMode = YES;
-    
+    [self.game gameMode:YES];
+    NSMutableAttributedString *blankString = [[NSMutableAttributedString alloc] initWithString:@""];
+    self.describeLabel.attributedText = blankString;
     [self updateUI];
 }
 

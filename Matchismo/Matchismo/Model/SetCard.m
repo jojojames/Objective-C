@@ -23,7 +23,11 @@
     score += [self checkShadingUsingCard:firstOtherCard and:secondOtherCard];
     score += [self checkRankUsingCard:firstOtherCard and:secondOtherCard];
     score += [self checkSymbolUsingCard:firstOtherCard and:secondOtherCard];
-    return score;
+    if(score != 80) {
+        return 0;
+    } else {
+        return score;
+    }
 }
 
 - (int)checkColorsUsingCard:(SetCard *)firstOtherCard and:(SetCard *)secondOtherCard {

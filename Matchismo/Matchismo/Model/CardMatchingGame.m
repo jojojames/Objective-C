@@ -60,7 +60,9 @@
 }
 
 - (void)removeLastPick {
-    [self.recentPicks removeLastObject];
+    if(self.recentPicks.count != 0) {
+        [self.recentPicks removeLastObject];
+    }
 }
 
 #define FLIP_COST 1
@@ -129,14 +131,8 @@
     }
 }
 
-/* Switch the game mode,f if threeCardGameMode is true, switch it to the opposite mode, twoCardGameMode. */
-- (bool)changeGameMode {
-    if(threeCardGameMode) {
-        threeCardGameMode = NO;
-    } else {
-        threeCardGameMode = YES;
-    }
-    return threeCardGameMode;
+- (void)gameMode:(BOOL)__gameMode {
+    threeCardGameMode = __gameMode;
 }
 
 @end

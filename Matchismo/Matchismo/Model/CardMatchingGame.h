@@ -24,7 +24,7 @@
 
 - (void)removeLastPick;
 
-- (bool)changeGameMode;
+- (void)gameMode:(BOOL)__gameMode;
 
 @property (nonatomic, readonly) int score;
 @end
