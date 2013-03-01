@@ -53,7 +53,7 @@
 }
 
 - (void)setCardButtonBackground:(UIButton *)cardButton {
-    UIImage *cardBackImage = [UIImage imageNamed:@"defaultbackimage.png"];
+    UIImage *cardBackImage = [UIImage imageNamed:@"puppy.png"];
     if(cardButton.isSelected) {
         [cardButton setImage:nil forState:UIControlStateNormal];
     } else {
@@ -95,6 +95,8 @@
     self.flipLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
 }
 
+
+/* Action when user presses a button. */
 - (IBAction)flipCard:(UIButton *)sender {
     oldScore = [self.game score];
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
@@ -106,9 +108,7 @@
  cardButtons do not need to be reallocated because the number of cards are the same throughout. 
  The game always starts out as two card mode. */
 - (IBAction)dealPressed:(UIButton *)sender {
-    //self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
     self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[self chooseDeck]];
-    
     self.flipCount = 0;
     self.describeLabel.text = [NSString stringWithFormat:@""];
     [self.game gameMode:NO]; // 2 card game mode by default
@@ -117,6 +117,15 @@
 
 - (Deck *)chooseDeck {
     return [[PlayingCardDeck alloc] init];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[self chooseDeck]];
+    self.flipCount = 0;
+    self.describeLabel.text = [NSString stringWithFormat:@""];
+    [self.game gameMode:NO]; // 2 card game mode by default
+    [self updateUI];
 }
 
 

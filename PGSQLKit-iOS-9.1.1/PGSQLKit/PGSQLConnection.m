@@ -198,7 +198,7 @@ NSString *const PGSQLCommandDidCompleteNotification = @"PGSQLCommandDidCompleteN
 	if (pgconn == nil) { return NO; }
 	if (isConnected == NO) { return NO; }
 	
-	[self appendSQLLog:[NSString stringWithString:@"Disconnected from database.\n"]];
+	[self appendSQLLog:@"Disconnected from database.\n"];
 	PQfinish(pgconn);
 	pgconn = nil;
 	isConnected = NO;
@@ -264,7 +264,7 @@ NSString *const PGSQLCommandDidCompleteNotification = @"PGSQLCommandDidCompleteN
 	}
 	if (pgconn == nil) 
 	{ 
-		errorDescription = [NSString stringWithString:@"Object is not Connected."];		
+		errorDescription = @"Object is not Connected.";		
 		[errorDescription retain];
 		return NO; 
 	}
@@ -272,7 +272,7 @@ NSString *const PGSQLCommandDidCompleteNotification = @"PGSQLCommandDidCompleteN
 	res = PQexec(pgconn, [sql cStringUsingEncoding:defaultEncoding]);
 	if (res == nil) 
 	{ 
-		errorDescription = [NSString stringWithString:@"ERROR: No response (PGRES_FATAL_ERROR)"];		
+		errorDescription = @"ERROR: No response (PGRES_FATAL_ERROR)";
 		[errorDescription retain];
 		return NO; 
 	}

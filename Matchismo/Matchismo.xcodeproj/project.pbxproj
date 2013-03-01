@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A49270616C09C2800888B46 /* SetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A49270516C09C2800888B46 /* SetCardDeck.m */; };
+		1A69800F16E06D5A0022D475 /* puppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A69800E16E06D5A0022D475 /* puppy.png */; };
 		1A8B049916C0D069003C7452 /* defaultbackimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8B049816C0D069003C7452 /* defaultbackimage.png */; };
 		1AE1D3D016B4C4990045EFC1 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE1D3CF16B4C4990045EFC1 /* CardMatchingGame.m */; };
-		1AEED39716B6176400BD171D /* jojoback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1AEED39616B6176400BD171D /* jojoback.jpg */; };
 		1AF00E7B16A4D617002E6D33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7A16A4D617002E6D33 /* UIKit.framework */; };
 		1AF00E7D16A4D617002E6D33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7C16A4D617002E6D33 /* Foundation.framework */; };
 		1AF00E7F16A4D617002E6D33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF00E7E16A4D617002E6D33 /* CoreGraphics.framework */; };
@@ -29,7 +29,6 @@
 		1AF9ABDE16BF50D900ED5E08 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9ABDD16BF50D900ED5E08 /* SetGameViewController.m */; };
 		1AF9ABE016BF57EC00ED5E08 /* doghouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF9ABDF16BF57EC00ED5E08 /* doghouse.png */; };
 		1AF9ABE216BF57F300ED5E08 /* dogpaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF9ABE116BF57F300ED5E08 /* dogpaw.png */; };
-		1AF9ABE416BF605C00ED5E08 /* backgroundcolorforsetgame.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF9ABE316BF605C00ED5E08 /* backgroundcolorforsetgame.png */; };
 		1AF9ABEA16C0857600ED5E08 /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9ABE916C0857600ED5E08 /* SetCard.m */; };
 		1AF9ABED16C0869B00ED5E08 /* MatchGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9ABEC16C0869B00ED5E08 /* MatchGameViewController.m */; };
 /* End PBXBuildFile section */
@@ -37,10 +36,10 @@
 /* Begin PBXFileReference section */
 		1A49270416C09C2800888B46 /* SetCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCardDeck.h; path = Model/SetCardDeck.h; sourceTree = "<group>"; };
 		1A49270516C09C2800888B46 /* SetCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCardDeck.m; path = Model/SetCardDeck.m; sourceTree = "<group>"; };
+		1A69800E16E06D5A0022D475 /* puppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy.png; sourceTree = SOURCE_ROOT; };
 		1A8B049816C0D069003C7452 /* defaultbackimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultbackimage.png; sourceTree = SOURCE_ROOT; };
 		1AE1D3CE16B4C4990045EFC1 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		1AE1D3CF16B4C4990045EFC1 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
-		1AEED39616B6176400BD171D /* jojoback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = jojoback.jpg; path = ../../../../Pictures/jojoback.jpg; sourceTree = "<group>"; };
 		1AF00E7616A4D617002E6D33 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF00E7A16A4D617002E6D33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AF00E7C16A4D617002E6D33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,7 +68,6 @@
 		1AF9ABDD16BF50D900ED5E08 /* SetGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
 		1AF9ABDF16BF57EC00ED5E08 /* doghouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doghouse.png; sourceTree = SOURCE_ROOT; };
 		1AF9ABE116BF57F300ED5E08 /* dogpaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dogpaw.png; sourceTree = SOURCE_ROOT; };
-		1AF9ABE316BF605C00ED5E08 /* backgroundcolorforsetgame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundcolorforsetgame.png; sourceTree = SOURCE_ROOT; };
 		1AF9ABE816C0857500ED5E08 /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetCard.h; path = Model/SetCard.h; sourceTree = "<group>"; };
 		1AF9ABE916C0857600ED5E08 /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetCard.m; path = Model/SetCard.m; sourceTree = "<group>"; };
 		1AF9ABEB16C0869B00ED5E08 /* MatchGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchGameViewController.h; sourceTree = "<group>"; };
@@ -166,11 +164,10 @@
 				1A49270516C09C2800888B46 /* SetCardDeck.m */,
 				1AF00EA716A51EB6002E6D33 /* PlayingCardDeck.h */,
 				1AF00EA816A51EB6002E6D33 /* PlayingCardDeck.m */,
-				1AEED39616B6176400BD171D /* jojoback.jpg */,
 				1AF9ABDF16BF57EC00ED5E08 /* doghouse.png */,
 				1AF9ABE116BF57F300ED5E08 /* dogpaw.png */,
-				1AF9ABE316BF605C00ED5E08 /* backgroundcolorforsetgame.png */,
 				1A8B049816C0D069003C7452 /* defaultbackimage.png */,
+				1A69800E16E06D5A0022D475 /* puppy.png */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,11 +229,10 @@
 				1AF00E8F16A4D617002E6D33 /* Default@2x.png in Resources */,
 				1AF00E9116A4D617002E6D33 /* Default-568h@2x.png in Resources */,
 				1AF00E9416A4D617002E6D33 /* MainStoryboard.storyboard in Resources */,
-				1AEED39716B6176400BD171D /* jojoback.jpg in Resources */,
 				1AF9ABE016BF57EC00ED5E08 /* doghouse.png in Resources */,
 				1AF9ABE216BF57F300ED5E08 /* dogpaw.png in Resources */,
-				1AF9ABE416BF605C00ED5E08 /* backgroundcolorforsetgame.png in Resources */,
 				1A8B049916C0D069003C7452 /* defaultbackimage.png in Resources */,
+				1A69800F16E06D5A0022D475 /* puppy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

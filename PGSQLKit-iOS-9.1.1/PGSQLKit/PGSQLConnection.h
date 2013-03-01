@@ -250,7 +250,7 @@ FOUNDATION_EXPORT NSString * const PGSQLConnectionDidCompleteNotification;
 /*!
 	 @const 
 	 @abstract   Notification for use with async command processing.
-	 @discussion <#(description)#>
+	 @discussion (description)
  */
 FOUNDATION_EXPORT NSString * const PGSQLCommandDidCompleteNotification;	
 

@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PGSQLConnection.h"
+#import "PGSQLConnectionInfo.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    PGSQLConnection *pgConn;
+}
+
+
 @end

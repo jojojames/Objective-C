@@ -235,5 +235,20 @@
     [self updateUI];
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count usingDeck:[self chooseDeck]];
+    
+    self.flipCount = 0;
+    self.describeLabel.text = [NSString stringWithFormat:@""];
+    NSMutableAttributedString *emptyString = [[NSMutableAttributedString alloc] initWithString:@""];
+    self.describeLabel.attributedText = emptyString;
+    [[self recentCardProperties] removeAllObjects];
+    [self.game gameMode:YES];
+    NSMutableAttributedString *blankString = [[NSMutableAttributedString alloc] initWithString:@""];
+    self.describeLabel.attributedText = blankString;
+    [self updateUI];
+}
+
 
 @end
